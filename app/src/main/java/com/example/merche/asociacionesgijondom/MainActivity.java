@@ -6,6 +6,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.example.merche.asociacionesgijondom.informacion.Asociacion;
+import com.example.merche.asociacionesgijondom.informacion.Directorio;
 import com.example.merche.asociacionesgijondom.informacion.GestoraDirectorios;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         gestora=new GestoraDirectorios();
         ListView lista=(ListView)findViewById(R.id.listView);
-        String[] from= Asociacion.getClaves();
+        String[] from= Directorio.getClaves();
         int[] to={R.id.tv_nombre,R.id.tv_direccion,R.id.tv_tfno,R.id.tv_fax};
         adaptador=new SimpleAdapter(this,gestora,R.layout.para_list_view,from,to);
         lista.setAdapter(adaptador);

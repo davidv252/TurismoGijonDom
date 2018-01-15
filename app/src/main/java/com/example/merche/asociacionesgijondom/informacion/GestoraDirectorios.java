@@ -70,7 +70,7 @@ public class GestoraDirectorios extends ArrayList<Directorio> {
                 //obtenemos el conjunto de elementos "asociacion"
                 NodeList nodo = this.documento.getElementsByTagName("directorio");
                 for (int x=0;x<nodo.getLength();x++) {
-                    Directorio una = new Directorio(null,null,null);
+                    Directorio una = new Directorio(null,null,null,null,null,null);
                     //recorremos todos los elementos de una asociación
                     this.navigateTree(nodo.item(x), una);
                     //añadimos el objeto asociación al arrayList de asociaciones

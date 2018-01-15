@@ -7,13 +7,17 @@ import java.util.HashMap;
  */
 
 public class Directorio extends HashMap<String, Object> {
-    public Directorio(String imagen, String nombre, String categoria) {
+    public Directorio(String imagen, String nombre, String categoria,String descripcion,String web,String direccion) {
         this.put("imagen", imagen);
         this.put("nombre", nombre);
         this.put("categoria", categoria);
+        this.put("descripcion", descripcion);
+        this.put("web", web);
+        this.put("direccion", direccion);
+
     }
     public static String[] getClaves(){
-        String[] claves={"imagen","nombre","categoria"};
+        String[] claves={"imagen","nombre","categoria","descripcion","web","direccion"};
         return claves;
     }
 }
