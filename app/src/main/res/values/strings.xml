@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AsociacionesGijonDOM</string>
+    <string name="orden_alfabetico">Orden Alfabético</string>
+    <string name="orden_categoria">Orden Categoría</string>
 </resources>
