@@ -3,28 +3,37 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:id="@+id/tv_nombre"
-        style="@android:style/TextAppearance.Large"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:id="@+id/tv_direccion"
-        style="@android:style/TextAppearance.Medium"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/tv_imagen"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher_round"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/tv_tfno"
-            style="@android:style/TextAppearance.Small"/>
-        <TextView
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/tv_fax"
-            style="@android:style/TextAppearance.Small"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_nombre"
+                android:text="Nombre"
+                style="@android:style/TextAppearance.Large"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_tipo"
+                android:text="Tipo"
+                style="@android:style/TextAppearance.Medium"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
