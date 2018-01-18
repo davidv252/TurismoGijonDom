@@ -19,7 +19,7 @@ public class Directorio extends HashMap<String, Object> {
 
 
     public static String[] getClaves(){
-        String[] claves={"imagen","nombre","categoria","descripcion","web","direccion"};
+        String[] claves={"foto","nombre","categoria","descripcion","web","direccion"};
         return claves;
     }
 
