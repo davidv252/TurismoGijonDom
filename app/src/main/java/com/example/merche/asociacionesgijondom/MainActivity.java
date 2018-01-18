@@ -7,6 +7,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 
+import com.example.merche.asociacionesgijondom.informacion.DatosViewBinder;
 import com.example.merche.asociacionesgijondom.informacion.Directorio;
 import com.example.merche.asociacionesgijondom.informacion.GestoraDirectorios;
 
@@ -29,9 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         gestora=new GestoraDirectorios();
         ListView lista=findViewById(R.id.listView);
-        String[] from= Directorio.getClaves();
+        String[] from = Directorio.getClaves();
         int[] to={R.id.tv_imagen,R.id.tv_nombre, R.id.tv_tipo};
         adaptador=new SimpleAdapter(this,gestora,R.layout.para_list_view,from,to);
+        adaptador.setViewBinder(new DatosViewBinder());
         lista.setAdapter(adaptador);
     }
 
