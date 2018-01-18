@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.example.merche.asociacionesgijondom.informacion.Asociacion;
+
 import com.example.merche.asociacionesgijondom.informacion.Directorio;
 import com.example.merche.asociacionesgijondom.informacion.GestoraDirectorios;
 

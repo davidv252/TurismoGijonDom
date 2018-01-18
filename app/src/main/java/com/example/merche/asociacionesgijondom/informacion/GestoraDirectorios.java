@@ -112,7 +112,7 @@ public class GestoraDirectorios extends ArrayList<Directorio> {
         private void procesarTexto(Node n, Directorio a) {
             String valor = n.getNodeValue();
             String nombreClave=this.key.getNodeName();
-            //para poner en el objeto Asociacion sólo la información que interesa
+            //para poner en el objeto Directorio sólo la información que interesa
             if (a.containsKey(nombreClave) && a.get(nombreClave)==null){
                 a.put(nombreClave, valor);
             }
