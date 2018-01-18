@@ -23,8 +23,7 @@ public class DatosViewBinder implements SimpleAdapter.ViewBinder {
 
     @Override
     public boolean setViewValue(View view, Object data, String textRepresentation) {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+
         if (view instanceof AppCompatImageView)
         {
             ImageView img=(ImageView)view;
