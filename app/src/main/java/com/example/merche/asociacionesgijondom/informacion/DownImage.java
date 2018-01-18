@@ -2,6 +2,7 @@ package com.example.merche.asociacionesgijondom.informacion;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 
@@ -30,7 +31,9 @@ public class DownImage extends AsyncTask<String, Integer, Bitmap> {
             URL imageUrl = new URL(imageURL);
             HttpURLConnection conn = (HttpURLConnection) imageUrl.openConnection();
             conn.connect();
-            imagen = BitmapFactory.decodeStream(conn.getInputStream());
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 2; // el factor de escala a minimizar la imagen, siempre
+            imagen = BitmapFactory.decodeStream(conn.getInputStream(), new Rect(0, 0, 0, 0), options);
         } catch (Exception e) {
             e.printStackTrace();
         }
