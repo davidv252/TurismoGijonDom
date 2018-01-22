@@ -16,8 +16,11 @@ public class Directorio extends HashMap<String, Object> {
         this.put("direccion", direccion);
 
     }
+
+
     public static String[] getClaves(){
         String[] claves={"imagen","nombre","categoria","descripcion","web","direccion"};
         return claves;
     }
+
 }
