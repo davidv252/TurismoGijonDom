@@ -67,13 +67,13 @@ public class GestoraDirectorios extends ArrayList<Directorio> {
 
         protected void onPostExecute(Boolean result) {
             if (result) {
-                //obtenemos el conjunto de elementos "asociacion"
+                //obtenemos el conjunto de elementos "directorio"
                 NodeList nodo = this.documento.getElementsByTagName("directorio");
                 for (int x=0;x<nodo.getLength();x++) {
                     Directorio una = new Directorio(null,null,null,null,null,null);
-                    //recorremos todos los elementos de una asociación
+                    //recorremos todos los elementos de un directorio
                     this.navigateTree(nodo.item(x), una);
-                    //añadimos el objeto asociación al arrayList de asociaciones
+                    //añadimos el objeto directorio al arrayList de directorios
                     gestora.add(una);
                 }
                 if (gestora.size()>0 && MainActivity.adaptador!=null){
