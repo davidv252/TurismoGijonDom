@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
     private GestoraDirectorios gestora;
     public static SimpleAdapter adaptador;
 
-    /*Notification.Builder caracretisticas;
+    Notification.Builder caracretisticas;
     int cuentaDirectorios;
-    int notiId = 001;*/
+    int notiId = 001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,33 @@ public class MainActivity extends AppCompatActivity {
 
         lista = (ListView)findViewById(R.id.listView);
 
-        /*cuentaDirectorios = lista.getAdapter().getCount();
+
+
+
+        mostrarNotificacion();
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                //Directorio itemSelected = gestora.get(i);
+                //Intent miIntent = new Intent(MainActivity.this, Main2Activity.class);
+                //miIntent.putExtra("obj",itemSelected);
+                //startActivity(miIntent);
+
+                String[] from = getClaves();
+                int[] to = {R.id.finalImagen, R.id.finalImagen, R.id.finalTelefono, R.id.finalDescripcion, R.id.finalLocalizacion};
+                adaptador = new SimpleAdapter(MainActivity.this, gestora, R.layout.activity_main2, from, to);
+            }
+
+        });
+
+    }
+
+    private void mostrarNotificacion() {
+        cuentaDirectorios = lista.getAdapter().getCount();
 
         caracretisticas =
                 new Notification.Builder(this).
@@ -64,26 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         NotificationManager notMangr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
-        notMangr.notify(notiId, caracretisticas.build());*/
-
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                //Directorio itemSelected = gestora.get(i);
-                //Intent miIntent = new Intent(MainActivity.this, Main2Activity.class);
-                //miIntent.putExtra("obj",itemSelected);
-                //startActivity(miIntent);
-
-                String[] from = getClaves();
-                int[] to = {R.id.finalImagen, R.id.finalImagen, R.id.finalTelefono, R.id.finalDescripcion, R.id.finalLocalizacion};
-                adaptador = new SimpleAdapter(MainActivity.this, gestora, R.layout.activity_main2, from, to);
-            }
-
-        });
-
+        notMangr.notify(notiId, caracretisticas.build());
     }
 
     @Override
