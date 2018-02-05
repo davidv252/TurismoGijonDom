@@ -1,6 +1,8 @@
 package com.example.merche.asociacionesgijondom.informacion;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by DamLocal on 11/01/2018.
@@ -23,12 +25,11 @@ public class Directorio extends HashMap<String, Object> implements Comparable<Di
         return claves;
     }
 
-
     @Override
     public int compareTo(Directorio directorio) {
 
-        Object[] directorio1 = {((String) this.get(getClaves()[1].toString())).toLowerCase(), ((String) this.get(getClaves()[2].toString())).toLowerCase(), ((String) this.get(getClaves()[0].toString())).toLowerCase()};
-        Object[] directorio2 = {((String) directorio.get(getClaves()[1].toString())).toLowerCase(), ((String) directorio.get(getClaves()[2].toString())).toLowerCase(), ((String) directorio.get(getClaves()[0].toString())).toLowerCase()};
+        Object[] directorio1 = {((String) this.get(getClaves()[1])).toLowerCase(), ((String) this.get(getClaves()[2])).toLowerCase(), ((String) this.get(getClaves()[0])).toLowerCase()};
+        Object[] directorio2 = {((String) directorio.get(getClaves()[1])).toLowerCase(), ((String) directorio.get(getClaves()[2])).toLowerCase(), ((String) directorio.get(getClaves()[0])).toLowerCase()};
         int campos= (int) (int) this.get(getClaves().length);
         for (int x = 0; x < campos; x++) {
             boolean iguales = directorio1[x].equals(directorio2[x]);
