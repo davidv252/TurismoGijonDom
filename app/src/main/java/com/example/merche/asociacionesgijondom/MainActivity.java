@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        mostrarNotificacion();
+        //mostrarNotificacion();
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void mostrarNotificacion() {
+    /*private void mostrarNotificacion() {
         cuentaDirectorios = lista.getAdapter().getCount();
 
         caracretisticas =
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         NotificationManager notMangr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         notMangr.notify(notiId, caracretisticas.build());
-    }
+    }*/
 
     @Override
     protected void onStart() {
@@ -116,7 +116,23 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.ordenAlfabetico: {
+                this.gestora.ordenaAlfabeticamente();
+                this.adaptador.notifyDataSetChanged();
+                break;
+            }
+            case R.id.ordenCategoria: {
+                this.gestora.ordenaCategoria();
+                this.adaptador.notifyDataSetChanged();
+                break;
+            }
 
+        }
+        return true;
+    }
 
 
 

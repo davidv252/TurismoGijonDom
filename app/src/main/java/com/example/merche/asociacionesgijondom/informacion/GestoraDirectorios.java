@@ -14,6 +14,8 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -117,5 +119,15 @@ public class GestoraDirectorios extends ArrayList<Directorio> {
                 a.put(nombreClave, valor);
             }
         }
+
+
     }
+    public void ordenaAlfabeticamente() {
+        Collections.sort(this, new ComparadorAlfabetico());
+    }
+
+    public void ordenaCategoria() {
+        Collections.sort(this, new ComparadorCategoria());
+    }
+
 }
